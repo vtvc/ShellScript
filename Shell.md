@@ -207,3 +207,132 @@ echo "no input argumet"
 fi
 
 ```
+
+## For Loop: Iteration
+
+```
+for variable in val1 val2 val3 ...val nth
+do
+Smt1
+Smt2
+done
+
+Break :  terminate the loop
+Continue :  it skips current iteration and takes next iteration
+exit : terminate the script
+
+
+
+```
+
+```
+
+Example: 
+
+#!/bin/sh
+for i in 1 2 3 4 5
+do
+  echo "Looping ... number $i"
+done
+
+
+```
+
+## While loop:
+
+```
+while [ condition ]do  
+smt1 … 
+done
+
+```
+
+```
+Example:
+
+#!/bin/sh
+
+a=0
+
+while [ $a -lt 10 ]
+do
+   echo $a
+   a=`expr $a + 1`
+done
+
+```
+
+
+## Case:
+
+```
+case variable in
+pattern1)   smt1
+            Smt2
+;;
+pattern2)   smt1
+            Smt2
+;;
+esac
+
+
+```
+
+```
+Example:
+
+
+read input
+  case $input in
+	hello)
+		echo "Hello yourself!"
+		;;
+	bye)
+		echo "See you again!"
+		;;
+	*)
+		echo "Sorry, I don't understand"
+		;;
+  esac
+
+```
+
+## Functions
+
+```
+To reduce length of code
+Easy to develop
+Easy to maintain
+Support re-usability
+
+function_name()
+{
+List of commands
+}
+
+```
+
+* Example
+```
+
+#!/bin/sh
+myadd()
+{
+echo “start add function”
+a=$1
+b=$2
+c=`expr $a  +  $b`
+echo “ add a and b: “ $c
+echo “ end add function”
+ 
+}
+### Main script starts here 
+echo "Script was called with $@"
+x=1
+echo "x is $x"
+myadd  20 30
+echo "x is $x"
+
+
+```
+
